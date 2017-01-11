@@ -18,9 +18,9 @@ router.get('/allJokes', function(req, res, next) {
 router.get('/newJoke', function(req, res, next) {
   res.render('newJoke', { title: 'New Joke'});
 });
-router.post('/storeJoke',function(req,res){
-  jokes.addJoke(req.body.njoke)
-  router.redirect('/newJoke')
+router.get('/storeJoke',function(req,res){
+  jokes.addJoke(req.query.njoke)
+
 });
 
 module.exports = router;
